@@ -34,6 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', function(e) {
             // Check if it's an internal link
             const targetId = this.getAttribute('href');
+            
+            if (targetId === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+
             if (targetId && targetId.startsWith('#')) {
                 e.preventDefault();
                 const targetElement = document.querySelector(targetId);
