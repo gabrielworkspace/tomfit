@@ -114,4 +114,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Menu Logic ---
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Toggle icon
+            const icon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+                // Prevent scrolling on body
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                }
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
 });
