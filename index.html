@@ -15,7 +15,65 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como funciona o acompanhamento online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Por WhatsApp. Tom monitora sua evolução, tira dúvidas e ajusta o protocolo conforme seu progresso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de academia para fazer a consultoria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a maioria dos protocolos exige equipamentos de academia. Consultas sobre treino em casa podem ser avaliadas caso a caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Em quanto tempo vejo resultados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende da consistência. A maioria dos alunos nota mudanças visíveis entre 4 e 8 semanas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o investimento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A partir de R$ 197/mês (valor sujeito a alteração). Clique no botão de contato para conferir todos os planos disponíveis no momento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Você atende homens também?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Embora o foco principal e especializações sejam no treinamento feminino, a consultoria está aberta para qualquer perfil que busca treinar com ciência."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como começo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "É só clicar no botão abaixo, entrar em contato pelo WhatsApp e iniciar a anamnese. Simples assim."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -257,13 +315,15 @@
             
             <div class="before-after-grid">
                  <div class="ba-card">
-                    <div class="ba-image" style="background-image: url('assets/images/antes.webp'); background-position: center 35%;">
-                        <span class="ba-label">Antes</span>
+                    <div class="ba-image zoomable">
+                        <img src="antes-depois-aluno.png" alt="Antes e depois de aluno na consultoria online" class="ba-bg">
+                        <span class="ba-label"><i class="ph-bold ph-magnifying-glass-plus"></i> Ver Foto Completa</span>
                     </div>
                  </div>
                  <div class="ba-card">
-                    <div class="ba-image" style="background-image: url('assets/images/depois.webp');">
-                        <span class="ba-label">Depois</span>
+                    <div class="ba-image zoomable">
+                        <img src="antes-depois-aluna.png" alt="Antes e depois de aluna na consultoria online" class="ba-bg">
+                        <span class="ba-label"><i class="ph-bold ph-magnifying-glass-plus"></i> Ver Foto Completa</span>
                     </div>
                  </div>
             </div>
@@ -446,7 +506,7 @@
                         <span class="discount">5% OFF</span>
                         <span class="code">CUPOM: <strong>TOMFIT</strong></span>
                     </div>
-                    <a href="#" class="btn btn-outline" target="_blank">Acessar Loja</a>
+                    <a href="#" class="btn btn-outline" target="_blank" rel="sponsored">Acessar Loja Gymcore</a>
                 </div>
                 <div class="partner-card">
                     <div class="logo-wrapper">
@@ -456,7 +516,7 @@
                         <span class="discount">10% OFF</span>
                         <span class="code">CUPOM: <strong>TOM</strong></span>
                     </div>
-                    <a href="#" class="btn btn-outline" target="_blank">Acessar Loja</a>
+                    <a href="#" class="btn btn-outline" target="_blank" rel="sponsored">Visitar Loja Bulking</a>
                 </div>
                 <div class="partner-card">
                     <div class="logo-wrapper">
@@ -466,7 +526,7 @@
                         <span class="discount">Até 20% OFF</span>
                         <span class="code">De acordo com o plano</span>
                     </div>
-                    <a href="#" class="btn btn-outline" target="_blank">Acessar Loja</a>
+                    <a href="#" class="btn btn-outline" target="_blank" rel="sponsored">Comprar na Haakon</a>
                 </div>
             </div>
         </div>
@@ -580,6 +640,13 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <div class="image-modal-content">
+            <img class="image-modal-img" id="modalImage" src="" alt="Imagem Ampliada">
+        </div>
+    </div>
+
+    <script src="assets/js/script.js?v=2"></script>
 </body>
 </html>

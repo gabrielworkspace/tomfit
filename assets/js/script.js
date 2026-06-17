@@ -72,4 +72,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Image Modal Logic ---
+    const zoomables = document.querySelectorAll('.zoomable');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.image-modal-close');
+
+    if (zoomables.length > 0 && modal) {
+        zoomables.forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img.ba-bg');
+                let url;
+                if (img) {
+                    url = img.src;
+                } else {
+                    const bgImage = window.getComputedStyle(this).backgroundImage;
+                    url = bgImage.slice(4, -1).replace(/"/g, "");
+                }
+                modalImg.src = url;
+                modal.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+
 });
