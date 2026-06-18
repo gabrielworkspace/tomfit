@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tom Sminorv - Consultoria Online de Treinamento</title>
+
+    <!-- Load Phosphor Icons asynchronously to prevent blocking FCP -->
+    <link rel="stylesheet" href="assets/css/phosphor.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/phosphor.css"></noscript>
+
     <meta name="description" content="Resultado real. Método comprovado. Sem achismo. Consultoria online com protocolos científicos para quem quer transformar o corpo de verdade.">
     
     <!-- Fonts: Inter for body, Clash Display for headings -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Preload LCP Image -->
     <link rel="preload" as="image" href="assets/images/tom_sminorv_profile.webp" type="image/webp" fetchpriority="high">
 
-    <!-- Preload Critical Fonts ONLY -->
-    <link rel="preload" href="assets/fonts/clash-display-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
     
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-<style id="inlined-critical-css">
+    <!-- Preload Critical Fonts (Local to prevent chaining and speed up FCP) -->
+    <link rel="preload" href="assets/fonts/clash-display-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/clash-display-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <style id="inlined-critical-css">
 /* Inter Font */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+  src: url('assets/fonts/inter.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -32,7 +38,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+  src: url('assets/fonts/inter.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -40,7 +46,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+  src: url('assets/fonts/inter.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -48,7 +54,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+  src: url('assets/fonts/inter.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -74,342 +80,6 @@
   font-display: swap;
   font-style: normal;
 }
-
-/* Optimized Phosphor Icons */
-
-/* bold */
-@font-face {
-  font-family: "Phosphor-Bold";
-  font-display: swap;
-  src:
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.woff2') format("woff2"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.woff') format("woff"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.ttf') format("truetype"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.svg#Phosphor-Bold') format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-.ph-bold {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "Phosphor-Bold" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.ph-bold.ph-arrow-down:before {
-  content: "\e03e";
-}
-.ph-bold.ph-arrow-right:before {
-  content: "\e06c";
-}
-.ph-bold.ph-barbell:before {
-  content: "\e0b6";
-}
-.ph-bold.ph-caret-down:before {
-  content: "\e136";
-}
-.ph-bold.ph-chart-line-up:before {
-  content: "\e156";
-}
-.ph-bold.ph-check:before {
-  content: "\e182";
-}
-.ph-bold.ph-check-circle:before {
-  content: "\e184";
-}
-.ph-bold.ph-cube:before {
-  content: "\e1da";
-}
-.ph-bold.ph-drop:before {
-  content: "\e210";
-}
-.ph-bold.ph-fire:before {
-  content: "\e242";
-}
-.ph-bold.ph-gear:before {
-  content: "\e270";
-}
-.ph-bold.ph-gender-female:before {
-  content: "\e6e0";
-}
-.ph-bold.ph-graduation-cap:before {
-  content: "\e62c";
-}
-.ph-bold.ph-list:before {
-  content: "\e2f0";
-}
-.ph-bold.ph-magnifying-glass-plus:before {
-  content: "\e310";
-}
-.ph-bold.ph-person-simple-walk:before {
-  content: "\e73a";
-}
-.ph-bold.ph-star:before {
-  content: "\e46a";
-}
-.ph-bold.ph-student:before {
-  content: "\e73e";
-}
-.ph-bold.ph-target:before {
-  content: "\e47c";
-}
-.ph-bold.ph-user:before {
-  content: "\e4c2";
-}
-.ph-bold.ph-video-camera:before {
-  content: "\e4da";
-}
-.ph-bold.ph-whatsapp-logo:before {
-  content: "\e5d0";
-}
-.ph-bold.ph-x:before {
-  content: "\e4f6";
-}
-.ph-bold.ph-x-circle:before {
-  content: "\e4f8";
-}
-
-/* fill */
-@font-face {
-  font-family: "Phosphor-Fill";
-  font-display: swap;
-  src:
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/Phosphor-Fill.woff2') format("woff2"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/Phosphor-Fill.woff') format("woff"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/Phosphor-Fill.ttf') format("truetype"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/Phosphor-Fill.svg#Phosphor-Fill') format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-.ph-fill {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "Phosphor-Fill" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.ph-fill.ph-arrow-down:before {
-  content: "\e03e";
-}
-.ph-fill.ph-arrow-right:before {
-  content: "\e06c";
-}
-.ph-fill.ph-barbell:before {
-  content: "\e0b6";
-}
-.ph-fill.ph-caret-down:before {
-  content: "\e136";
-}
-.ph-fill.ph-chart-line-up:before {
-  content: "\e156";
-}
-.ph-fill.ph-check:before {
-  content: "\e182";
-}
-.ph-fill.ph-check-circle:before {
-  content: "\e184";
-}
-.ph-fill.ph-cube:before {
-  content: "\e1da";
-}
-.ph-fill.ph-drop:before {
-  content: "\e210";
-}
-.ph-fill.ph-fire:before {
-  content: "\e242";
-}
-.ph-fill.ph-gear:before {
-  content: "\e270";
-}
-.ph-fill.ph-gender-female:before {
-  content: "\e6e0";
-}
-.ph-fill.ph-graduation-cap:before {
-  content: "\e62c";
-}
-.ph-fill.ph-list:before {
-  content: "\e2f0";
-}
-.ph-fill.ph-magnifying-glass-plus:before {
-  content: "\e310";
-}
-.ph-fill.ph-person-simple-walk:before {
-  content: "\e73a";
-}
-.ph-fill.ph-star:before {
-  content: "\e46a";
-}
-.ph-fill.ph-student:before {
-  content: "\e73e";
-}
-.ph-fill.ph-target:before {
-  content: "\e47c";
-}
-.ph-fill.ph-user:before {
-  content: "\e4c2";
-}
-.ph-fill.ph-video-camera:before {
-  content: "\e4da";
-}
-.ph-fill.ph-whatsapp-logo:before {
-  content: "\e5d0";
-}
-.ph-fill.ph-x:before {
-  content: "\e4f6";
-}
-.ph-fill.ph-x-circle:before {
-  content: "\e4f8";
-}
-
-/* regular */
-@font-face {
-  font-family: "Phosphor";
-  font-display: swap;
-  src:
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/Phosphor.woff2') format("woff2"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/Phosphor.woff') format("woff"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/Phosphor.ttf') format("truetype"),
-    url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/Phosphor.svg#Phosphor') format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-.ph {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "Phosphor" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.ph.ph-arrow-down:before {
-  content: "\e03e";
-}
-.ph.ph-arrow-right:before {
-  content: "\e06c";
-}
-.ph.ph-barbell:before {
-  content: "\e0b6";
-}
-.ph.ph-caret-down:before {
-  content: "\e136";
-}
-.ph.ph-chart-line-up:before {
-  content: "\e156";
-}
-.ph.ph-check:before {
-  content: "\e182";
-}
-.ph.ph-check-circle:before {
-  content: "\e184";
-}
-.ph.ph-cube:before {
-  content: "\e1da";
-}
-.ph.ph-drop:before {
-  content: "\e210";
-}
-.ph.ph-fire:before {
-  content: "\e242";
-}
-.ph.ph-gear:before {
-  content: "\e270";
-}
-.ph.ph-gender-female:before {
-  content: "\e6e0";
-}
-.ph.ph-graduation-cap:before {
-  content: "\e62c";
-}
-.ph.ph-list:before {
-  content: "\e2f0";
-}
-.ph.ph-magnifying-glass-plus:before {
-  content: "\e310";
-}
-.ph.ph-person-simple-walk:before {
-  content: "\e73a";
-}
-.ph.ph-star:before {
-  content: "\e46a";
-}
-.ph.ph-student:before {
-  content: "\e73e";
-}
-.ph.ph-target:before {
-  content: "\e47c";
-}
-.ph.ph-user:before {
-  content: "\e4c2";
-}
-.ph.ph-video-camera:before {
-  content: "\e4da";
-}
-.ph.ph-whatsapp-logo:before {
-  content: "\e5d0";
-}
-.ph.ph-x:before {
-  content: "\e4f6";
-}
-.ph.ph-x-circle:before {
-  content: "\e4f8";
-}
-
 
 </style>
 
