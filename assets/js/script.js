@@ -9,20 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         questionBtn.addEventListener('click', () => {
             const isActive = questionBtn.classList.contains('active');
-
-            // Close all open FAQs
-            faqItems.forEach(otherItem => {
-                const otherBtn = otherItem.querySelector('.faq-question');
-                const otherAnswer = otherItem.querySelector('.faq-answer');
-                otherBtn.classList.remove('active');
-                otherAnswer.style.maxHeight = null;
-            });
-
-            // If it wasn't active, open it
+            let targetHeight = 0;
+            
+            // Read layout phase (no DOM writes yet)
             if (!isActive) {
-                questionBtn.classList.add('active');
-                answerDiv.style.maxHeight = answerDiv.scrollHeight + "px";
+                targetHeight = answerDiv.scrollHeight;
             }
+
+            // Write layout phase
+            requestAnimationFrame(() => {
+                // Close all open FAQs
+                faqItems.forEach(otherItem => {
+                    const otherBtn = otherItem.querySelector('.faq-question');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    otherBtn.classList.remove('active');
+                    otherAnswer.style.maxHeight = null;
+                });
+
+                // If it wasn't active, open it
+                if (!isActive) {
+                    questionBtn.classList.add('active');
+                    answerDiv.style.maxHeight = targetHeight + "px";
+                }
+            });
         });
     });
 
